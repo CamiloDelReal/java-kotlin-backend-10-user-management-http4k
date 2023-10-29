@@ -1,0 +1,7 @@
+# UserManagementApplication
+
+## Package
+```
+./gradlew shadowJar
+```
+

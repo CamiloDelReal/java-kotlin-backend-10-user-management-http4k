@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "ffbf5004-a6cc-4064-b17d-2e57980afd35",
+		"name": "User Management Http4k",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20647569"
+	},
+	"item": [
+		{
+			"name": "Login root",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"root@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login guest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"jane@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJXZWIgdXJsIGhlcmUiLCJpc3MiOiJYQXBwcyIsInN1YiI6IntcImlkXCI6MSxcImZpcnN0TmFtZVwiOlwiUm9vdFwiLFwibGFzdE5hbWVcIjpcIkFkbWluaXN0cmF0b3JcIixcImVtYWlsXCI6XCJyb290QGdtYWlsLmNvbVwiLFwicGFzc3dvcmRcIjpcIiQyYSQxMiR3MmE2bWl3WWZIOXlvaWtZMTA3clB1VzBhRC5rOXhIR2ZiRm9GMlNkMkg0SlJsZjRhT2s5LlwiLFwicm9sZXNcIjpbe1wiaWRcIjoxLFwibmFtZVwiOlwiQWRtaW5pc3RyYXRvclwifV19IiwiZXhwIjoxNzI5NjcyNzc4fQ.qcJlvQCjYIl19MS-tmkIpFIh-iCb1X1BQJZoO5kv29E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJXZWIgdXJsIGhlcmUiLCJpc3MiOiJYQXBwcyIsInN1YiI6IntcImlkXCI6MSxcImZpcnN0TmFtZVwiOlwiUm9vdFwiLFwibGFzdE5hbWVcIjpcIkFkbWluaXN0cmF0b3JcIixcImVtYWlsXCI6XCJyb290QGdtYWlsLmNvbVwiLFwicGFzc3dvcmRcIjpcIiQyYSQxMiR3MmE2bWl3WWZIOXlvaWtZMTA3clB1VzBhRC5rOXhIR2ZiRm9GMlNkMkg0SlJsZjRhT2s5LlwiLFwicm9sZXNcIjpbe1wiaWRcIjoxLFwibmFtZVwiOlwiQWRtaW5pc3RyYXRvclwifV19IiwiZXhwIjoxNzI5NjcyNzc4fQ.qcJlvQCjYIl19MS-tmkIpFIh-iCb1X1BQJZoO5kv29E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJXZWIgdXJsIGhlcmUiLCJpc3MiOiJYQXBwcyIsInN1YiI6IntcImlkXCI6NSxcImZpcnN0TmFtZVwiOlwibGlua1wiLFwibGFzdE5hbWVcIjpcIkRvZVwiLFwiZW1haWxcIjpcImxpbmtAZ21haWwuY29tXCIsXCJwYXNzd29yZFwiOlwiJDJhJDEyJFZXWHRXNkJCcHFHR2NIbmhQMy9VZWVGc0JmWTFVS2Q4bkc4azRTZ29QclhSdVAwLlN2TXhXXCIsXCJyb2xlc1wiOlt7XCJpZFwiOjIsXCJuYW1lXCI6XCJHdWVzdFwifV19IiwiZXhwIjoxNzI5Njc5MjA5fQ.h2QEFpp9OBys2owhuXOJfqkGm5HdAkh5fe4fj0jh-uw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\",\n    \"email\": \"jane@gmail.com\",\n    \"password\": \"123456\",\n    \"roles\": [{\n        \"id\": 1,\n        \"name\": \"Guest\"\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJXZWIgdXJsIGhlcmUiLCJpc3MiOiJYQXBwcyIsInN1YiI6IntcImlkXCI6NCxcImZpcnN0TmFtZVwiOlwiSm9oblwiLFwibGFzdE5hbWVcIjpcIkRvZVwiLFwiZW1haWxcIjpcImpvaG5AZ21haWwuY29tXCIsXCJwYXNzd29yZFwiOlwiJDJhJDEyJGU5YVRYQTBHZWpzOWlFZEJ5VzNsbHVORC5vUWlFemthVFlsb0E4bEJnbkRkZ1dHaUZaMWhTXCIsXCJyb2xlc1wiOlt7XCJpZFwiOjIsXCJuYW1lXCI6XCJHdWVzdFwifV19IiwiZXhwIjoxNzI5Njc4NzU5fQ.xcNVCoF-BYAoxQ5uE_0DHRaKwwT78WNLtx5fHEL6k4Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Jane 2\",\n    \"lastName\": \"Doe\",\n    \"email\": \"jane@gmail.com\",\n    \"password\": \"123456\",\n    \"roles\": [{\n        \"id\": 1,\n        \"name\": \"Guest\"\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJXZWIgdXJsIGhlcmUiLCJpc3MiOiJYQXBwcyIsInN1YiI6IntcImlkXCI6MSxcImZpcnN0TmFtZVwiOlwiUm9vdFwiLFwibGFzdE5hbWVcIjpcIkFkbWluaXN0cmF0b3JcIixcImVtYWlsXCI6XCJyb290QGdtYWlsLmNvbVwiLFwicGFzc3dvcmRcIjpcIiQyYSQxMiRoelRMb3ZLcHJLZlJWb3RDUVdXamwuSU10ZHdySGRnUmpTZURIa3d2YURJWll5L1JkaDJBLlwiLFwicm9sZXNcIjpbe1wiaWRcIjoxLFwibmFtZVwiOlwiQWRtaW5pc3RyYXRvclwifV19IiwiZXhwIjoxNzI5Njc4ODA2fQ.Ea7q-iUSuDVsqoaT_0CIMamdOCdtk2UnlW3bgc0zfSI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
