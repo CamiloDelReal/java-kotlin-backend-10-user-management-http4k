@@ -19,9 +19,7 @@ class JwtVerifier(
             .withIssuer(propertiesService.securityIssuer)
             .build()
         val decodedJWT = verifier.verify(token)
-//        decodedJWT.payload
         return objectMapper.readValue(decodedJWT.subject, User::class.java)
-//        return null
     }
 
 }
